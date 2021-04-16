@@ -1,0 +1,26 @@
+accounts:
+  - name: alice
+    coins: ["1000token", "100000000stake"]
+  - name: bob
+    coins: ["1000token", "100000000stake"]
+  - name: charlie 
+    coins: ["1000token", "100000000stake"]
+  - name: dave
+    coins: ["1000token", "100000000stake"]
+  - name: eve
+    coins: ["1000token", "100000000stake"]
+  - name: frank
+    coins: ["1000token", "100000000stake"]
+validator:
+  name: alice
+  staked: "100000000stake"
+  name: bob
+  staked: "100000000stake"
+  name: charlie
+  staked: "100000000stake"
+  name: dave
+  staked: "100000000stake"
+  name: eve
+  staked: "100000000stake"
+  name: frank 
+  staked: "100000000stake"
