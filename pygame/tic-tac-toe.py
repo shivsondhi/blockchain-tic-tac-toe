@@ -1,39 +1,5 @@
 '''
-Tic Tac Toe!
-Made by me, not sure how this should work more efficiently, but this is where I'll implement everything I learn. 
-
-Notes:
-For functions, the argument and parameter order is tilerow, tilecol; but while traversing or accessing the board data structure, order is tilecol and then tilerow.
-Basic Flow:
-_____________________________________________________________________________________________________________________________________________________________________
-1. Create bottom panel as: 
-
-	P1: Shape	   				  P2: Shape
-------------------------------------------------
-	New Game						Reset
-
-2. Select P1 shape and P2 shape --> Question asked in top panel.
-
-3. Create empty tic tac toe board.
-
-4. Whoever's turn it is, their P1/P2 gets highlighted in bottom panel.
-
-5. Start Game!
-
-6. Game Won Animation!
-_____________________________________________________________________________________________________________________________________________________________________
-
-Changes:
-	Reset Move doesn't reset the Player details.
-	Pressing Reset Move multiple times will keep changing the shape to be printed to screen!
-	Changing window size changes layout completely.
-	Use keyboard!
-		To select X or O choice at game start.
-		To select where to put X or O on the board -> Highlight the selected cell / cell over which cursor is hovering.
-		Spacebar to put shape (or X or O)
-		R to Reset and N to start new game. 
-	Between Player info and Menu put instructions for keyboard or just use the mouse! / Crosses and Knots.
-	IMPROVE COLORS!!!!! 
+Tic Tac Toe using pygame.
 '''
 
 import pygame, sys, random
@@ -390,8 +356,3 @@ def undoMove(lastMove, board):
 
 if __name__ == '__main__':
 	main()
-
-'''
-#Imperfect, buggy code, needs some work.
-
-'''
