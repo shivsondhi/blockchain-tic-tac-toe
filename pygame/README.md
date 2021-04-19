@@ -11,3 +11,5 @@ The main function is where the main game processes take place. It contains all t
 
 ### Supporting methods
 Outside the main function, we have all the supporting methods that are used throughout the program. Each one has a short description of its function.
+
+![Pygame Tic Tac Toe](img.png)
