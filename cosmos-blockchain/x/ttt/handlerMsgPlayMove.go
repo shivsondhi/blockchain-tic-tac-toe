@@ -14,7 +14,7 @@ func handleMsgPlayMove(ctx sdk.Context, k keeper.Keeper, msg types.MsgPlayMove) 
 	currMove := ""
 	nextMove := ""
 	newState := ""
-	currPlayer := msg.Player    //temporarily
+	currPlayer := msg.Player //temporarily
 
 	// Check if game exists
 	if !k.GameExists(ctx, msg.ID) {
@@ -74,33 +74,34 @@ func handleMsgPlayMove(ctx sdk.Context, k keeper.Keeper, msg types.MsgPlayMove) 
 			full = false
 			continue
 		}
-		if i == 0 {
+		switch i {
+		case 0:
 			// if i==0 : check horizontal, check vertical and check diagonal
 			if ((string(letter) == string(newState[i+1])) && (string(letter) == string(newState[i+2]))) || ((string(letter) == string(newState[i+3])) && (string(letter) == string(newState[i+6]))) || ((string(letter) == string(newState[i+4])) && (string(letter) == string(newState[i+8]))) {
 				finished = true
 				winner = string(letter)
 			}
-		} else if i == 1 {
+		case 1:
 			// if i==1 : check vertical
-			if ((string(letter) == string(newState[i+3])) && (string(letter) == string(newState[i+6]))) {
+			if (string(letter) == string(newState[i+3])) && (string(letter) == string(newState[i+6])) {
 				finished = true
 				winner = string(letter)
 			}
-		} else if i == 2 {
+		case 2:
 			// if i==2 : check vertical and diagonal
 			if ((string(letter) == string(newState[i+3])) && (string(letter) == string(newState[i+6]))) || ((string(letter) == string(newState[i+2])) && (string(letter) == string(newState[i+4]))) {
 				finished = true
 				winner = string(letter)
 			}
-		} else if i == 3 {
+		case 3:
 			// if i==3 : check horizontal
-			if ((string(letter) == string(newState[i+1])) && (string(letter) == string(newState[i+2]))) {
+			if (string(letter) == string(newState[i+1])) && (string(letter) == string(newState[i+2])) {
 				finished = true
 				winner = string(letter)
 			}
-		} else if i == 6 {
+		case 6:
 			// if i==6 : check horizontal
-			if ((string(letter) == string(newState[i+1])) && (string(letter) == string(newState[i+2]))) {
+			if (string(letter) == string(newState[i+1])) && (string(letter) == string(newState[i+2])) {
 				finished = true
 				winner = string(letter)
 			}
@@ -116,7 +117,6 @@ func handleMsgPlayMove(ctx sdk.Context, k keeper.Keeper, msg types.MsgPlayMove) 
 	if finished {
 		status = "finished"
 	}
-
 
 	var game = types.Game{
 		Creator:  gameState.Creator,
@@ -134,4 +134,3 @@ func handleMsgPlayMove(ctx sdk.Context, k keeper.Keeper, msg types.MsgPlayMove) 
 
 	return &sdk.Result{Events: ctx.EventManager().Events()}, nil
 }
-
